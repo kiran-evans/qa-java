@@ -5,10 +5,19 @@ public class HelloWorld {
 	private static String message = "This is a test";
 	
 	public static void main(String[] args) {
-		printMessage(message);
+		if (printMessage(message)) {
+			System.out.print(message);
+			return;
+		}
+		
+		System.out.print("Message failed");
 	}
 	
-	public static void printMessage(String msg) {
-		System.out.print(msg);
+	public static boolean printMessage(String msg) {
+		if (msg != null) {
+			return true;
+		}
+		
+		return false;
 	}
 }
